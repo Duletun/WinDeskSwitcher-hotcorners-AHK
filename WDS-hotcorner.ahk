@@ -6,9 +6,6 @@ hotkeysEnabled := true
 return
 
 HotCorners:
-    if (!hotkeysEnabled)
-        return
-
     CoordMode, Mouse, Screen
 
     ; Get desktop size
@@ -61,15 +58,18 @@ return
 ; Toggle all functions on and off with the right Shift key press
 >RShift::
     hotkeysEnabled := !hotkeysEnabled
-    if (hotkeysEnabled)
+    if (hotkeysEnabled){
+		SetTimer, HotCorners, 0
         ShowCustomMessage("Hotkeys Enabled", "ENABLED", "Green")
-    else
+	} else {
+		SetTimer, HotCorners, Off
         ShowCustomMessage("Hotkeys Disabled", "DISABLED", "Red")
+	}
 return
 
 ShowCustomMessage(title, text, color) {
    ; SplashTextOn, 200, 50, %title%, %text%
-   ; Sleep 500
+   ; Sleep 500  ; Показать сообщение на 1 секунду
    ; SplashTextOff
 	
 	Gui, +AlwaysOnTop -Caption +ToolWindow
