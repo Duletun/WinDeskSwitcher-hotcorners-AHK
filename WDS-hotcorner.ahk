@@ -35,7 +35,7 @@ HotCorners:
 
     return
 
-; Горячие клавиши для переключения виртуальных рабочих столов
+; Hotkeys for switching virtual desktops
 !WheelUp::
     if (hotkeysEnabled)
         Send, ^#{Left}
@@ -58,7 +58,7 @@ return
         Send, ^#{Right}
 return
 
-; Отключение и включение всех функций по нажатию правого Shift
+; Toggle all functions on and off with the right Shift key press
 >RShift::
     hotkeysEnabled := !hotkeysEnabled
     if (hotkeysEnabled)
@@ -69,7 +69,7 @@ return
 
 ShowCustomMessage(title, text, color) {
    ; SplashTextOn, 200, 50, %title%, %text%
-   ; Sleep 500  ; Показать сообщение на 1 секунду
+   ; Sleep 500
    ; SplashTextOff
 	
 	Gui, +AlwaysOnTop -Caption +ToolWindow
