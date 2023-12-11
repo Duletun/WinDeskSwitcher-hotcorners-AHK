@@ -1,4 +1,4 @@
-# WinDeskSwitcher-hotcorners-AHK
+# WDS-hotcorners-AHK
 Windows 11 AHK script for switching between virtual desktops + hot corner for Win+Tab view (GNOME-like)
 
 
